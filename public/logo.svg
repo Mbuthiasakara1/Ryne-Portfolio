@@ -1,0 +1,94 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="700" height="700">
+  <defs>
+    <!-- Professional gradient - Deep blue to teal (tech industry standard) -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="darkAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle pulse -->
+    <radialGradient id="pulseGradient">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.15">
+        <animate attributeName="stop-opacity" values="0.15;0.05;0.15" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Subtle background pulse -->
+  <circle cx="100" cy="100" r="85" fill="url(#pulseGradient)">
+    <animate attributeName="r" values="80;90;80" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Cloud base - modern, geometric -->
+  <g filter="url(#glow)">
+    <!-- Main cloud shape with layers effect -->
+    <ellipse cx="100" cy="110" rx="45" ry="25" fill="url(#mainGradient)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <circle cx="75" cy="105" r="20" fill="url(#mainGradient)" opacity="0.85"/>
+    <circle cx="100" cy="95" r="25" fill="url(#mainGradient)" opacity="0.95"/>
+    <circle cx="125" cy="105" r="20" fill="url(#mainGradient)" opacity="0.85"/>
+    
+    <!-- Server stack layers underneath cloud -->
+    <rect x="70" y="120" width="60" height="8" rx="2" fill="url(#darkAccent)" opacity="0.8"/>
+    <rect x="75" y="132" width="50" height="6" rx="1.5" fill="url(#darkAccent)" opacity="0.6"/>
+    <rect x="80" y="142" width="40" height="5" rx="1.5" fill="url(#darkAccent)" opacity="0.4"/>
+  </g>
+
+  <!-- Data flow indicators - ascending to cloud -->
+  <g opacity="0.7">
+    <circle cx="85" cy="155" r="2" fill="#0ea5e9">
+      <animate attributeName="cy" values="155;100;155" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="155" r="2" fill="#06b6d4">
+      <animate attributeName="cy" values="155;100;155" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="115" cy="155" r="2" fill="#14b8a6">
+      <animate attributeName="cy" values="155;100;155" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Code brackets - full stack indicator -->
+  <g opacity="0.5" stroke="url(#mainGradient)" stroke-width="3" fill="none" stroke-linecap="square">
+    <path d="M 40 70 L 30 85 L 40 100"/>
+    <path d="M 160 70 L 170 85 L 160 100"/>
+  </g>
+
+  <!-- Top: CLOUD text -->
+  <text x="100" y="50" font-family="'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" 
+        font-size="16" fill="url(#mainGradient)" text-anchor="middle" 
+        font-weight="700" letter-spacing="4" opacity="0.9">CLOUD</text>
+
+  <!-- Bottom: FULL STACK text -->
+  <text x="100" y="180" font-family="'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" 
+        font-size="13" fill="url(#mainGradient)" text-anchor="middle" 
+        font-weight="700" letter-spacing="3" opacity="0.85">FULL STACK</text>
+
+  <!-- Connecting lines - subtle tech aesthetic -->
+  <line x1="100" y1="55" x2="100" y2="70" stroke="url(#mainGradient)" stroke-width="1.5" opacity="0.4" stroke-dasharray="3,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="6" dur="1s" repeatCount="indefinite"/>
+  </line>
+  <line x1="100" y1="150" x2="100" y2="170" stroke="url(#mainGradient)" stroke-width="1.5" opacity="0.4" stroke-dasharray="3,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="6" dur="1s" repeatCount="indefinite"/>
+  </line>
+</svg>

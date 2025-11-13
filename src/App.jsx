@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Code2, Cloud, Mail, Github, Linkedin, ExternalLink, Award, Briefcase, MapPin, Phone, BookOpen, Sparkles, Rocket, Terminal, Database, Layout, Server } from 'lucide-react';
-
+import logo from '../public/logo.svg'
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -143,7 +143,7 @@ export default function Portfolio() {
       ],
       tech: ['React', 'Flask', 'SQLite', 'HTML2Canvas', 'Payment Integration'],
       liveLink: 'https://mindcaretest.health/home',
-      githubLink: 'https://github.com/Mbuthiasakara1/Better-Clinic'
+      githubLink1: 'https://github.com/Mbuthiasakara1/Better-Clinic'
     },
     {
       title: 'Malazikenyaltd',
@@ -156,7 +156,7 @@ export default function Portfolio() {
       ],
       tech: ['React', 'HTML5', 'CSS3', 'JavaScript', 'SEO'],
       liveLink: 'https://malazikenyaltd.com/',
-      githubLink: 'https://github.com/Mbuthiasakara1/Malazi-Kenya'
+      githubLink1: 'https://github.com/Mbuthiasakara1/Malazi-Kenya'
     }
   ];
 
@@ -200,7 +200,8 @@ export default function Portfolio() {
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/80 backdrop-blur-xl shadow-lg shadow-purple-500/10' : 'bg-transparent'}`}>
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div className="text-2xl font-bold flex items-center gap-2">
-              <Terminal className="w-6 h-6 text-white-400 " />
+              {/* <Terminal className="w-6 h-6 text-white-400 " /> */}
+              <img src={logo} alt="MRW Logo" className="w-8 h-8" />
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent text-white">
                 Mbuthia Ryne
               </span>
@@ -246,7 +247,7 @@ export default function Portfolio() {
                 </p>
 
                 <div className="flex flex-wrap gap-4 animate-slide-up animation-delay-600">
-                  <a href="mailto:mbuthiaryne@gmail.com">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mbuthiaryne@gmail.com" target="_blank" rel="noopener noreferrer">
                     <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300">
                       <Mail className="w-4 h-4 mr-2" />
                       Get In Touch
@@ -423,10 +424,12 @@ export default function Portfolio() {
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </Button>
-                      <Button variant="ghost" className="text-purple-300 hover:text-purple-200 hover:bg-purple-500/10">
+                      <Button variant="ghost" className="text-purple-300 hover:text-purple-200 hover:bg-purple-500/10"
+                        onClick={() => window.open(project.githubLink1, '_blank')}>
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </Button>
+                      
                     </div>
                   </CardContent>
                 </Card>
